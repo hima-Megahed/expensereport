@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
 using expensereport_csharp;
 using NUnit.Framework;
@@ -16,23 +15,20 @@ namespace Tests
         [Test]
         public void AddingExpenseDinnerShouldReturnDinnerExpense()
         {
-            using (var sw = new StringWriter())
-            {
-                Console.SetOut(sw);
+            using var sw = new StringWriter();
+            Console.SetOut(sw);
 
-                // Act
-                var expenseReport = new ExpenseReport();
-                expenseReport.PrintReport(new List<Expense>
-                {
-                    new Expense { amount = 100, type = ExpenseType.DINNER },
-                    // new Expense {amount = 200, type = ExpenseType.BREAKFAST},
-                    // new Expense {amount = 300, type = ExpenseType.CAR_RENTAL}
-                });
+            // Act
+            var expenseReport = new ExpenseReport();
+            expenseReport.PrintReport([
+                new Expense { amount = 100, type = ExpenseType.DINNER }
+                // new Expense {amount = 200, type = ExpenseType.BREAKFAST},
+                // new Expense {amount = 300, type = ExpenseType.CAR_RENTAL}
+            ]);
 
-                // Assert
-                var output = sw.ToString();
-                Assert.IsTrue(output.Contains("Dinner\t100"));
-            }
+            // Assert
+            var output = sw.ToString();
+            Assert.IsTrue(output.Contains("Dinner\t100"));
         }
     }
 }
