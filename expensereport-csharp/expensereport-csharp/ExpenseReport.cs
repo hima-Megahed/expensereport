@@ -21,7 +21,7 @@ public class ExpenseReport
 
             var expenseName = GetExpenseName(expense.Type);
 
-            String mealOverExpensesMarker =
+            var mealOverExpensesMarker =
                 expense.Type == ExpenseType.Dinner && expense.Amount > 5000 ||
                 expense.Type == ExpenseType.Breakfast && expense.Amount > 1000
                     ? "X"
