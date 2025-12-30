@@ -3,12 +3,6 @@ using System.Collections.Generic;
 
 namespace expensereport_csharp;
 
-public class Expense
-{
-    public int Amount;
-    public ExpenseType Type;
-}
-
 public class ExpenseReport
 {
     public void PrintReport(List<Expense> expenses)
