@@ -16,9 +16,8 @@ public class ExpenseReport
                               GetMealOverExpensesMarker(expense));
         }
 
-        var total = GetTotalExpenses(expenses);
         Console.WriteLine("Meal expenses: " + GetMealsExpenses(expenses));
-        Console.WriteLine("Total expenses: " + total);
+        Console.WriteLine("Total expenses: " + GetTotalExpenses(expenses));
     }
 
     private static int GetTotalExpenses(List<Expense> expenses) =>
