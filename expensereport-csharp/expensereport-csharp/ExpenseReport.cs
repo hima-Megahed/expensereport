@@ -20,7 +20,7 @@ namespace expensereport_csharp
 
             foreach (Expense expense in expenses)
             {
-                if (expense.type == ExpenseType.DINNER || expense.type == ExpenseType.BREAKFAST)
+                if (expense.type == ExpenseType.Dinner || expense.type == ExpenseType.Breakfast)
                 {
                     mealExpenses += expense.amount;
                 }
@@ -28,20 +28,20 @@ namespace expensereport_csharp
                 String expenseName = "";
                 switch (expense.type)
                 {
-                    case ExpenseType.DINNER:
+                    case ExpenseType.Dinner:
                         expenseName = "Dinner";
                         break;
-                    case ExpenseType.BREAKFAST:
+                    case ExpenseType.Breakfast:
                         expenseName = "Breakfast";
                         break;
-                    case ExpenseType.CAR_RENTAL:
+                    case ExpenseType.CarRental:
                         expenseName = "Car Rental";
                         break;
                 }
 
                 String mealOverExpensesMarker =
-                    expense.type == ExpenseType.DINNER && expense.amount > 5000 ||
-                    expense.type == ExpenseType.BREAKFAST && expense.amount > 1000
+                    expense.type == ExpenseType.Dinner && expense.amount > 5000 ||
+                    expense.type == ExpenseType.Breakfast && expense.amount > 1000
                         ? "X"
                         : " ";
 

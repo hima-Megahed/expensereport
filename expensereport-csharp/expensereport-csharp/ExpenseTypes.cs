@@ -2,7 +2,7 @@
 
 public enum ExpenseType
 {
-    DINNER,
-    BREAKFAST,
-    CAR_RENTAL
+    Dinner,
+    Breakfast,
+    CarRental
 }
