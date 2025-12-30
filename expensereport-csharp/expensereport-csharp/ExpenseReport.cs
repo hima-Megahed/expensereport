@@ -7,8 +7,8 @@ public class ExpenseReport
 {
     public void PrintReport(List<Expense> expenses)
     {
-        int total = 0;
-        int mealExpenses = 0;
+        var total = 0;
+        var mealExpenses = 0;
 
         Console.WriteLine("Expenses " + DateTime.Now);
 
