@@ -19,12 +19,8 @@ public class ExpenseReport
                 mealExpenses += expense.Amount;
             }
 
-            var expenseName = GetExpenseName(expense.Type);
-
-            var mealOverExpensesMarker =
-                GetMealOverExpensesMarker(expense);
-
-            Console.WriteLine(expenseName + "\t" + expense.Amount + "\t" + mealOverExpensesMarker);
+            Console.WriteLine(GetExpenseName(expense.Type) + "\t" + expense.Amount + "\t" +
+                              GetMealOverExpensesMarker(expense));
 
             total += expense.Amount;
         }
