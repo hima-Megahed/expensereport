@@ -14,7 +14,7 @@ public class ExpenseReport
 
         foreach (var expense in expenses)
         {
-            if (expense.Type == ExpenseType.Dinner || expense.Type == ExpenseType.Breakfast)
+            if (expense.Type is ExpenseType.Dinner or ExpenseType.Breakfast)
             {
                 mealExpenses += expense.Amount;
             }
