@@ -19,8 +19,7 @@ public class Tests
         Console.SetOut(sw);
 
         // Act
-        var expenseReport = new ExpenseReport();
-        expenseReport.PrintReport([
+        ExpenseReport.PrintReport([
             new Expense { Amount = 100, Type = ExpenseType.Dinner },
             new Expense { Amount = 200, Type = ExpenseType.Breakfast },
             new Expense { Amount = 300, Type = ExpenseType.CarRental }
@@ -41,7 +40,7 @@ public class Tests
 
         // Act
         var expenseReport = new ExpenseReport();
-        expenseReport.PrintReport([
+        ExpenseReport.PrintReport([
             new Expense { Amount = 6000, Type = ExpenseType.Dinner },
             new Expense { Amount = 200, Type = ExpenseType.Breakfast },
             new Expense { Amount = 300, Type = ExpenseType.CarRental }
@@ -62,7 +61,7 @@ public class Tests
 
         // Act
         var expenseReport = new ExpenseReport();
-        expenseReport.PrintReport([
+        ExpenseReport.PrintReport([
             new Expense { Amount = 6000, Type = ExpenseType.Dinner },
             new Expense { Amount = 10000, Type = ExpenseType.Breakfast },
             new Expense { Amount = 300, Type = ExpenseType.CarRental }

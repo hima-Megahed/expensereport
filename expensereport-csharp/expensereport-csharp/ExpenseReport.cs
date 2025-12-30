@@ -6,7 +6,7 @@ namespace expensereport_csharp;
 
 public class ExpenseReport
 {
-    public void PrintReport(List<Expense> expenses)
+    public static void PrintReport(List<Expense> expenses)
     {
         Console.WriteLine("Expenses " + DateTime.Now);
 
