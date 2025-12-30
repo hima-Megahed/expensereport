@@ -3,15 +3,10 @@ using System.Collections.Generic;
 
 namespace expensereport_csharp
 {
-    public enum ExpenseType
-    {
-        DINNER, BREAKFAST, CAR_RENTAL
-    }
-
     public class Expense
     {
-        public ExpenseType type;
         public int amount;
+        public ExpenseType type;
     }
 
     public class ExpenseReport
@@ -22,7 +17,7 @@ namespace expensereport_csharp
             int mealExpenses = 0;
 
             Console.WriteLine("Expenses " + DateTime.Now);
-            
+
             foreach (Expense expense in expenses)
             {
                 if (expense.type == ExpenseType.DINNER || expense.type == ExpenseType.BREAKFAST)
