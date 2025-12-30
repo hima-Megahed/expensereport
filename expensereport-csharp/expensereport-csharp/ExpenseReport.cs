@@ -5,8 +5,8 @@ namespace expensereport_csharp;
 
 public class Expense
 {
-    public int amount;
-    public ExpenseType type;
+    public int Amount;
+    public ExpenseType Type;
 }
 
 public class ExpenseReport
@@ -20,13 +20,13 @@ public class ExpenseReport
 
         foreach (Expense expense in expenses)
         {
-            if (expense.type == ExpenseType.Dinner || expense.type == ExpenseType.Breakfast)
+            if (expense.Type == ExpenseType.Dinner || expense.Type == ExpenseType.Breakfast)
             {
-                mealExpenses += expense.amount;
+                mealExpenses += expense.Amount;
             }
 
             String expenseName = "";
-            switch (expense.type)
+            switch (expense.Type)
             {
                 case ExpenseType.Dinner:
                     expenseName = "Dinner";
@@ -40,14 +40,14 @@ public class ExpenseReport
             }
 
             String mealOverExpensesMarker =
-                expense.type == ExpenseType.Dinner && expense.amount > 5000 ||
-                expense.type == ExpenseType.Breakfast && expense.amount > 1000
+                expense.Type == ExpenseType.Dinner && expense.Amount > 5000 ||
+                expense.Type == ExpenseType.Breakfast && expense.Amount > 1000
                     ? "X"
                     : " ";
 
-            Console.WriteLine(expenseName + "\t" + expense.amount + "\t" + mealOverExpensesMarker);
+            Console.WriteLine(expenseName + "\t" + expense.Amount + "\t" + mealOverExpensesMarker);
 
-            total += expense.amount;
+            total += expense.Amount;
         }
 
         Console.WriteLine("Meal expenses: " + mealExpenses);

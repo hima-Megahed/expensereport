@@ -21,9 +21,9 @@ public class Tests
         // Act
         var expenseReport = new ExpenseReport();
         expenseReport.PrintReport([
-            new Expense { amount = 100, type = ExpenseType.Dinner },
-            new Expense { amount = 200, type = ExpenseType.Breakfast },
-            new Expense { amount = 300, type = ExpenseType.CarRental }
+            new Expense { Amount = 100, Type = ExpenseType.Dinner },
+            new Expense { Amount = 200, Type = ExpenseType.Breakfast },
+            new Expense { Amount = 300, Type = ExpenseType.CarRental }
         ]);
 
         // Assert
@@ -42,9 +42,9 @@ public class Tests
         // Act
         var expenseReport = new ExpenseReport();
         expenseReport.PrintReport([
-            new Expense { amount = 6000, type = ExpenseType.Dinner },
-            new Expense { amount = 200, type = ExpenseType.Breakfast },
-            new Expense { amount = 300, type = ExpenseType.CarRental }
+            new Expense { Amount = 6000, Type = ExpenseType.Dinner },
+            new Expense { Amount = 200, Type = ExpenseType.Breakfast },
+            new Expense { Amount = 300, Type = ExpenseType.CarRental }
         ]);
 
         // Assert
@@ -63,9 +63,9 @@ public class Tests
         // Act
         var expenseReport = new ExpenseReport();
         expenseReport.PrintReport([
-            new Expense { amount = 6000, type = ExpenseType.Dinner },
-            new Expense { amount = 10000, type = ExpenseType.Breakfast },
-            new Expense { amount = 300, type = ExpenseType.CarRental }
+            new Expense { Amount = 6000, Type = ExpenseType.Dinner },
+            new Expense { Amount = 10000, Type = ExpenseType.Breakfast },
+            new Expense { Amount = 300, Type = ExpenseType.CarRental }
         ]);
 
         // Assert
