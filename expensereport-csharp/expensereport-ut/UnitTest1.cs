@@ -19,20 +19,23 @@ namespace Tests
             using (var sw = new StringWriter())
             {
                 Console.SetOut(sw);
-                
+
                 // Act
                 var expenseReport = new ExpenseReport();
                 expenseReport.PrintReport(new List<Expense>
                 {
-                    new Expense {amount = 100, type = ExpenseType.DINNER},
+                    new Expense { amount = 100, type = ExpenseType.DINNER },
                     // new Expense {amount = 200, type = ExpenseType.BREAKFAST},
                     // new Expense {amount = 300, type = ExpenseType.CAR_RENTAL}
                 });
-                
+
                 // Assert
                 var output = sw.ToString();
-                Assert.Equals("",  output);
-            };
+                Assert.AreEqual(
+                    "Expenses 12/30/2025 10:40:28 PM\nDinner\t100\t \nMeal expenses: 100\nTotal expenses: 100", output);
+            }
+
+            ;
         }
     }
 }
