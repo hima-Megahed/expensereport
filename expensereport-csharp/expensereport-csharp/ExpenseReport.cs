@@ -15,9 +15,7 @@ public class ExpenseReport
         foreach (var expense in expenses)
         {
             if (expense.Type is ExpenseType.Dinner or ExpenseType.Breakfast)
-            {
                 mealExpenses += expense.Amount;
-            }
 
             Console.WriteLine(GetExpenseName(expense.Type) + "\t" + expense.Amount + "\t" +
                               GetMealOverExpensesMarker(expense));
