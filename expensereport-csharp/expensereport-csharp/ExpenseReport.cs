@@ -12,7 +12,7 @@ public class ExpenseReport
 
         Console.WriteLine("Expenses " + DateTime.Now);
 
-        foreach (Expense expense in expenses)
+        foreach (var expense in expenses)
         {
             if (expense.Type == ExpenseType.Dinner || expense.Type == ExpenseType.Breakfast)
             {
