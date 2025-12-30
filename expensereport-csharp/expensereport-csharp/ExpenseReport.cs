@@ -19,19 +19,7 @@ public class ExpenseReport
                 mealExpenses += expense.Amount;
             }
 
-            String expenseName = "";
-            switch (expense.Type)
-            {
-                case ExpenseType.Dinner:
-                    expenseName = "Dinner";
-                    break;
-                case ExpenseType.Breakfast:
-                    expenseName = "Breakfast";
-                    break;
-                case ExpenseType.CarRental:
-                    expenseName = "Car Rental";
-                    break;
-            }
+            var expenseName = GetExpenseName(expense.Type);
 
             String mealOverExpensesMarker =
                 expense.Type == ExpenseType.Dinner && expense.Amount > 5000 ||
@@ -46,5 +34,16 @@ public class ExpenseReport
 
         Console.WriteLine("Meal expenses: " + mealExpenses);
         Console.WriteLine("Total expenses: " + total);
+    }
+
+    private string GetExpenseName(ExpenseType expenseType)
+    {
+        return expenseType switch
+        {
+            ExpenseType.Dinner => "Dinner",
+            ExpenseType.Breakfast => "Breakfast",
+            ExpenseType.CarRental => "Car Rental",
+            _ => throw new ArgumentOutOfRangeException(nameof(expenseType), expenseType, null)
+        };
     }
 }
