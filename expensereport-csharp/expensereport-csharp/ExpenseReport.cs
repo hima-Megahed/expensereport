@@ -10,14 +10,19 @@ public class ExpenseReport
     {
         Console.WriteLine("Expenses " + DateTime.Now);
 
+        PrintExpenseReportItems(expenses);
+
+        Console.WriteLine("Meal expenses: " + GetMealsExpenses(expenses));
+        Console.WriteLine("Total expenses: " + GetTotalExpenses(expenses));
+    }
+
+    private static void PrintExpenseReportItems(List<Expense> expenses)
+    {
         foreach (var expense in expenses)
         {
             Console.WriteLine(GetExpenseName(expense.Type) + "\t" + expense.Amount + "\t" +
                               GetMealOverExpensesMarker(expense));
         }
-
-        Console.WriteLine("Meal expenses: " + GetMealsExpenses(expenses));
-        Console.WriteLine("Total expenses: " + GetTotalExpenses(expenses));
     }
 
     private static int GetTotalExpenses(List<Expense> expenses) =>
